@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for file in $1/*.html; do
-  number="${file##*/}"
-  number="${number%%.html}"
-  new_name=$(echo -n $number | shasum -b -a 1 | awk '{print $1;}')
-  git mv "$file" "$(dirname $file)/${new_name}.html"
-done

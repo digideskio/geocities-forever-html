@@ -1,4 +1,4 @@
-$('a').not('.preserve').on('mouseover', function() {
+$(document).on('mouseover', 'a:not(.preserve)', function() {
   $(this).attr('href', randomPage());
 });
 
